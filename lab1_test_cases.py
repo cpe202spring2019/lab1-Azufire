@@ -9,6 +9,7 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(max_list_iter([1,2,3]), 3)
         self.assertEqual(max_list_iter([3, 3, 3]), 3)
         self.assertEqual(max_list_iter([]), None)
+        self.assertEqual(max_list_iter([1]), 1)
         with self.assertRaises(ValueError):  # used to check for exception
             max_list_iter(tlist)
 
@@ -19,7 +20,11 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(reverse_rec([1]), [1])
         with self.assertRaises(ValueError):
            reverse_rec(None)
-
+    
+    def test_reverse_rec_edge_cases(self):
+        self.assertEqual(reverse_rec([]), [])
+        self.assertEqual(reverse_rec([1,1,1]), [1,1,1])
+        self.assertEqual(reverse_rec([5]), [5])
 
     def test_bin_search(self):
         list_val =[0,1,2,3,4,7,8,9,10]

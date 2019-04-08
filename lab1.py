@@ -16,8 +16,10 @@ def max_list_iter(int_list):  # must use iteration not recursion
 def reverse_rec(int_list):   # must use recursion
     """recursively reverses a list of numbers and returns the reversed list
     If list is None, raises ValueError"""
-    if int_list == None:        #if list is empty, raise value error
+    if int_list == None:        #if list is None, raise value error
         raise ValueError("")
+    if int_list == []:          #if list is empty, return empty list
+        return []
     if len(int_list) == 1:
         return [int_list[0]]
     return reverse_rec(int_list[1:]) + [int_list[0]]
