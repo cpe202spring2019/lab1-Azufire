@@ -26,7 +26,10 @@ class TestLab1(unittest.TestCase):
         low = 0
         high = len(list_val)-1
         self.assertEqual(bin_search(4, 0, len(list_val)-1, list_val), 4 )
-
+    
+    def test_self_bin_searches(self):
+        sample_list = [0,1,2,3,4,5,6,7,8,9,10]
+        self.assertEqual(bin_search(5, 0, 10, sample_list), 5)
 
 if __name__ == "__main__":
         unittest.main()
