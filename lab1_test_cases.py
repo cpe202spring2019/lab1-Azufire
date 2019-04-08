@@ -27,9 +27,18 @@ class TestLab1(unittest.TestCase):
         high = len(list_val)-1
         self.assertEqual(bin_search(4, 0, len(list_val)-1, list_val), 4 )
     
-    def test_self_bin_searches(self):
+    def test_self_bin_searches(self):   #basic proper cases
         sample_list = [0,1,2,3,4,5,6,7,8,9,10]
         self.assertEqual(bin_search(5, 0, 10, sample_list), 5)
+        self.assertEqual(bin_search(11, 0, 10, sample_list), None)
+        with self.assertRaises(ValueError):
+            bin_search(0, 0, 10, None)
+
+    def test_weird_bin_searches(self): #wacky cases
+        sample_list = [0,1,2,3,4,5,6,7,8,9,10]
+        self.assertEqual(bin_search(11, 5, 10, []), None)
+        self.assertEqual(bin_search(5, 5, 0, sample_list), None)
+        self.assertEqual(bin_search(0, 0, 0, sample_list), 0)
 
 if __name__ == "__main__":
         unittest.main()
