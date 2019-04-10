@@ -34,7 +34,8 @@ class TestLab1(unittest.TestCase):
     
     def test_self_bin_searches(self):   #basic proper cases
         sample_list = [0,1,2,3,4,5,6,7,8,9,10]
-        self.assertEqual(bin_search(5, 0, 10, sample_list), 5)
+        self.assertEqual(bin_search(5, 0, 10, sample_list), 5)      #upper half of list
+        self.assertEqual(bin_search(0, 0, 10, sample_list), 0)      #lower half of list
         self.assertEqual(bin_search(11, 0, 10, sample_list), None)
         with self.assertRaises(ValueError):
             bin_search(0, 0, 10, None)
