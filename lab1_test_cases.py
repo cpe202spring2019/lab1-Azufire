@@ -55,6 +55,11 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(bin_search(5, 0, 4, list_val), 4)
         self.assertEqual(bin_search(5, 3, 4, list_val), 4)        
 
+    def test_bin_none(self):  #extra test for when code returns none
+        list_val = [1, 2, 3, 4, 5]
+        self.assertEqual(bin_search(6, 0, 4, list_val), None)
+        self.assertEqual(bin_search(1, 5, 6, list_val), None)
+
 if __name__ == "__main__":
         unittest.main()
 
