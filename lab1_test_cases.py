@@ -60,6 +60,14 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(bin_search(6, 0, 4, list_val), None)
         self.assertEqual(bin_search(1, 5, 6, list_val), None)
 
+    def test_outer_highlows(self):      #test when high or lows are outside of range
+        list_val = [1,2,3]
+        self.assertEqual(bin_search(3, -1, 4, list_val), None)
+        self.assertEqual(bin_search(3, 7, 4, list_val), None)
+        self.assertEqual(bin_search(3, 0,-1, list_val), None)
+        self.assertEqual(bin_search(3, 0, 4, list_val), None)
+
+
 if __name__ == "__main__":
         unittest.main()
 
