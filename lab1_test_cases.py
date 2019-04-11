@@ -46,6 +46,15 @@ class TestLab1(unittest.TestCase):
         self.assertEqual(bin_search(5, 5, 0, sample_list), None)
         self.assertEqual(bin_search(0, 0, 0, sample_list), 0)
 
+    def test_debug_returns(self):   #more cases since the grader failed
+        list_val = [1, 2, 3, 4, 5]
+        self.assertEqual(bin_search(1, 0, 4, list_val), 0)
+        self.assertEqual(bin_search(2, 0, 4, list_val), 1)
+        self.assertEqual(bin_search(3, 0, 4, list_val), 2)
+        self.assertEqual(bin_search(4, 0, 4, list_val), 3)
+        self.assertEqual(bin_search(5, 0, 4, list_val), 4)
+        self.assertEqual(bin_search(5, 3, 4, list_val), 4)        
+
 if __name__ == "__main__":
         unittest.main()
 
